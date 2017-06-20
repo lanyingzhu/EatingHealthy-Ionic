@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="white">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+          <img height="40" src="../assets/images/logo.png">
+      </ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="logout()">
+            <ion-icon name="exit"></ion-icon>
+          </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list *ngFor="let recipe of recipesList; let i=index">
+        <ion-card *ngIf="i<4">
+          <img src="{{recipe.image}}">
+          <ion-card-content>
+            <ion-card-title>
+              {{recipe.name}}         
+            </ion-card-title> 
+          </ion-card-content>
+          <ion-row>
+            <ion-col>
+              <button (click)="getLike(recipe)" ion-button icon-left clear small>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>{{recipe.likeNumber}} Likes</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-left clear small (click)="openAlert()" >
+                <ion-icon name="text"></ion-icon>
+                <div>4 Comments</div>
+              </button>
+            </ion-col>
+            <ion-col>
+            <button (click)="launchRecipeDetialPage(recipe)" class="more" ion-button  clear small>More &raquo;</button>
+          </ion-col>
+          </ion-row>
+          
+        </ion-card>
+    </ion-list>
+</ion-content>

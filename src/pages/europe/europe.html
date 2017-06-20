@@ -1,0 +1,28 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Europe</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list *ngFor="let recipe of recipesList">
+       <ion-item>
+        <ion-thumbnail item-left>
+          <img src="{{recipe.image}}">
+        </ion-thumbnail>
+        <h2>{{recipe.name}}</h2>
+        <button ion-button icon-left clear small (click)="getLike(recipe)">
+            <ion-icon class="thumbsup" name="thumbs-up"></ion-icon>
+            <div>{{recipe.likeNumber}} likes</div>
+        </button>
+        <button (click)="launchRecipeDetialPage(recipe)" class="more" ion-button clear icon-right>More &raquo;</button>
+       </ion-item>  
+    </ion-list>
+</ion-content>
