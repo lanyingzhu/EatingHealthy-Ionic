@@ -44,8 +44,12 @@ export class RecipeDetialPage {
         
         this.afAuth.authState.subscribe(data => {
            console.log(data);
-           this.user = data;
-           console.log(this.user.email)
+           if (data) {
+               this.user = data;
+               console.log(this.user.email);
+            } else {
+                console.log("No user");
+            }
         });
         
         this.afAuth.idToken.subscribe(data => {
@@ -57,7 +61,6 @@ export class RecipeDetialPage {
                 });
             }
             else {
-            
                 console.log("No user");
             }
         });

@@ -17,12 +17,11 @@ import { RecipeDetialPage } from '../recipe-detial/recipe-detial';
 })
 export class EuropePage {
 
-    recipesList = [];
+    recipesList: any;
     
   
     constructor(private recipesService: RecipesService, public navCtrl: NavController) {
         this.getRecipes();
-        this.filterData(this.recipesList);
     }
 
     getRecipes() {

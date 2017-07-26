@@ -33,7 +33,7 @@
             <ion-col col-5>
               <button (click)="openForm()" ion-button icon-left clear small>
                 <ion-icon name="text"></ion-icon>
-                <div>4 Comments</div>
+                <div>{{recipe.commentNumber}} Comments</div>
               </button>
             </ion-col>
         </ion-row>
@@ -68,7 +68,7 @@
             <ion-item>
               <blockquote >
                 <p class="comment">{{comment.comment}}</p>
-                <footer>{{comment.author}}, {{comment.updatedAt | date}}</footer>
+                <footer>{{comment.author}}, {{comment.date | date}}</footer>
             </blockquote>
            </ion-item>
           </ion-list>

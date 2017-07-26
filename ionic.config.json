@@ -1,12 +1,11 @@
 {
   "name": "EatingHealthy",
   "app_id": "",
-  "v2": true,
-  "typescript": true,
   "proxies": [
     {
       "path": "/recipes",
-      "proxyUrl": "http://localhost:3000/recipes"
+      "proxyUrl": "https://eatinghealthyrest-akin-gamb.mybluemix.net/recipes"
     }
-  ]
+  ],
+  "type": "ionic-angular"
 }

@@ -3,7 +3,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the RecipesService provider.
@@ -27,7 +27,6 @@ export class RecipesService {
     return this.http.get(this.url)
     .do (this.logResponse)
     .map (this.extractData)
-    .do (this.logResponse)
     .catch(this.catchError)
   }
   
@@ -35,7 +34,6 @@ export class RecipesService {
     return this.http.put(this.url + "/" + recipe._id, {"likeNumber": recipe.likeNumber})
     .do (this.logResponse)
     .map (this.extractData)
-    .do (this.logResponse)
     .catch(this.catchError)
   }
   
@@ -44,13 +42,12 @@ export class RecipesService {
     return this.http.post(this.url + "/" + id + "/comments", comment)
     .do (this.logResponse)
     .map (this.extractData)
-    .do (this.logResponse)
     .catch(this.catchError)
   }
   
   private catchError(error: Response | any) {
     console.log(error);
-    return Observable.throw(error.json().error || "server error.");
+    return Observable.throw(error.json || "server error.");
   }
   
   private logResponse(res: Response) {
@@ -58,8 +55,15 @@ export class RecipesService {
   }
   
   private extractData(res:Response) {
+    var objs = res.json().rows;
+    if (objs) {
+        var recipes = new Array();
+        for (var i=0; i<objs.length; i++) {
+            objs[i].doc.commentNumber = objs[i].doc.comments.length;
+            recipes.push(objs[i].doc);
+        };
+        return recipes;
+    }
     return res.json();
   }
-  
-  
 }

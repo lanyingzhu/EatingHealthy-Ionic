@@ -12,7 +12,7 @@ import { RecipeDetialPage } from '../recipe-detial/recipe-detial';
 export class HomePage {
 
     recipe: any;
-    recipesList = [];
+    recipesList: any;
     countLike: number = 0;
     constructor(private afAuth: AngularFireAuth, private toast: ToastController, private recipesService: RecipesService, public navCtrl: NavController, private alertCtrl: AlertController) {
         this.getRecipes();
@@ -75,6 +75,4 @@ export class HomePage {
         }).present();
         
     }
-
-  
 }

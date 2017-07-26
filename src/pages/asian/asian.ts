@@ -17,11 +17,10 @@ import { AngularFireAuth } from 'angularfire2/auth';
   templateUrl: 'asian.html',
 })
 export class AsianPage {
-    recipesList = [];
+    recipesList: any;
   
     constructor(private recipesService: RecipesService, public navCtrl: NavController) {
         this.getRecipes();
-        this.filterData(this.recipesList);
     }
 
     getRecipes() {
