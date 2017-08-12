@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController,  ToastController} from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { RecipesService } from '../../providers/recipes-service';
-import { RecipeDetialPage } from '../recipe-detial/recipe-detial';
+import { RecipeDetailPage } from '../recipe-detail/recipe-detail';
 
 
 @Component({
@@ -28,7 +28,7 @@ export class HomePage {
             }
             else {
                 this.toast.create({
-                    message: 'Could not find authentication detials', 
+                    message: 'Could not find authentication details', 
                     duration: 3000
                 }).present();
             
@@ -48,11 +48,11 @@ export class HomePage {
         this.recipesService.getRecipes().subscribe(data => this.recipesList = data);
     }
     
-    launchRecipeDetialPage(recipe) {
+    launchRecipeDetailPage(recipe) {
        console.log(this);
        console.log("----------");
         
-       this.navCtrl.push(RecipeDetialPage, {
+       this.navCtrl.push(RecipeDetailPage, {
             "recipe": recipe       
        });
       

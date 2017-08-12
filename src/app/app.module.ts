@@ -8,7 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { AsianPage } from '../pages/asian/asian';
 import { AmericaPage } from '../pages/america/america';
 import { EuropePage } from '../pages/europe/europe';
-import { RecipeDetialPage } from '../pages/recipe-detial/recipe-detial';
+import { RecipeDetailPage } from '../pages/recipe-detail/recipe-detail';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { RecipesService } from '../providers/recipes-service';
@@ -28,7 +28,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AsianPage,
     AmericaPage,
     EuropePage,
-    RecipeDetialPage,
+    RecipeDetailPage,
     LoginPage,
     RegisterPage
 
@@ -49,7 +49,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AsianPage,
     AmericaPage,
     EuropePage,
-    RecipeDetialPage,
+    RecipeDetailPage,
     LoginPage,
     RegisterPage
 

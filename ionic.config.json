@@ -1,11 +1,5 @@
 {
   "name": "EatingHealthy",
   "app_id": "",
-  "proxies": [
-    {
-      "path": "/recipes",
-      "proxyUrl": "https://eatinghealthyrest-akin-gamb.mybluemix.net/recipes"
-    }
-  ],
   "type": "ionic-angular"
 }

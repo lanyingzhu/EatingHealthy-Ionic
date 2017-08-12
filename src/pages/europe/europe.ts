@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RecipesService } from '../../providers/recipes-service';
 import { NavController } from 'ionic-angular';
-import { RecipeDetialPage } from '../recipe-detial/recipe-detial';
+import { RecipeDetailPage } from '../recipe-detail/recipe-detail';
 
 
 /**
@@ -51,9 +51,9 @@ export class EuropePage {
         });
     }
     
-    launchRecipeDetialPage(recipe) {
+    launchRecipeDetailPage(recipe) {
        
-       this.navCtrl.push(RecipeDetialPage, {
+       this.navCtrl.push(RecipeDetailPage, {
        
             "recipe": recipe
        

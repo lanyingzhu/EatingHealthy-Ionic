@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RecipesService } from '../../providers/recipes-service';
-import { RecipeDetialPage } from '../recipe-detial/recipe-detial';
+import { RecipeDetailPage } from '../recipe-detail/recipe-detail';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 
@@ -51,9 +51,9 @@ export class AsianPage {
         });
     }
     
-    launchRecipeDetialPage(recipe) {
+    launchRecipeDetailPage(recipe) {
        
-       this.navCtrl.push(RecipeDetialPage, {
+       this.navCtrl.push(RecipeDetailPage, {
        
              "recipe": recipe
        });

@@ -14,8 +14,8 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class RecipesService {
   
-  //private url: string = "http://localhost:3000/recipes";
-  private url: string = "/recipes";
+  private url: string = "https://eatinghealthyrest-akin-gamb.mybluemix.net/recipes";
+  //private url: string = "/recipes";
 
   constructor(private http: Http) {
     console.log('Hello RecipesService Provider');
